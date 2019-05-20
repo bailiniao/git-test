@@ -6,8 +6,13 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-Vue.use(VueAxios,axios)
+import './assets/css/reset.css'
+import './assets/css/common.css'
+import './assets/fonts/style.css'
+
+Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
+
 /* eslint-disable no-new */
 new Vue({
 	el: '#app',
