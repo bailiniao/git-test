@@ -66,7 +66,7 @@
 					data
 				} = await this.axios.get("http://localhost:8888/serviceLink");
 				this.serviceLinkData = data;
-				console.log("菜单数据", data);
+				// console.log("菜单数据", data);
 			}
 		},
 		mounted() {

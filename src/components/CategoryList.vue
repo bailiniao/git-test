@@ -1,9 +1,9 @@
 <template>
 	<div>
-		<ul class="clearfix">
+		<ul v-if="data.length>0" class="clearfix">
 			<li class="goods-list" v-for="(item,index) in data" :key='index' :class="{'last-child':(index+1)%4==0}">
 				<a :href="item.herf">
-					<img class="goods-img" :src="item.goodsUrl" alt="">
+					<ImagesList :data='item.colorImageUrls'></ImagesList>
 					<div class="goods-name">{{item.goodsName}}</div>
 					<div class="goods-desc">{{item.goodsDesc}}</div>
 					<div class="goods-price">
@@ -15,15 +15,31 @@
 				<div class="goods-new" v-if="item.newProduct">新品</div>
 			</li>
 		</ul>
+		<div v-else class="clearfix empty">
+			<div class="fl empty-bg"></div>
+			<div class="fr empty-desc">
+				<div class="title">抱歉没有找到相关商品</div>
+				<p>
+					建议您: <br>
+					1.适当减少筛选条件 <br>
+					2.尝试其他条件
+				</p>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
+	import ImagesList from '@/components/ImagesList'
+
 	export default {
 		data() {
 			return {
 
 			}
+		},
+		components:{
+			ImagesList
 		},
 		props: {
 			data: {
@@ -40,7 +56,7 @@
 	.goods-list {
 		float: left;
 		width: 303px;
-		height: 400px;
+		height: 416px;
 		background-color: #fff;
 		cursor: pointer;
 		transition: all 0.3s ease;
@@ -114,5 +130,28 @@
 		border-radius: 50%;
 		background: linear-gradient(120deg, #2e74f6, #56bdf9);
 		color: white;
+	}
+
+	.empty {
+		width: 335px;
+		margin: 120px auto 380px;
+		padding-top: 60px;
+
+		.empty-bg {
+			background: url('../assets/images/xiongmao.png/') no-repeat;
+			width: 105px;
+			height: 135px;
+			margin-right: 30px;
+		}
+
+		.empty-desc {
+			width: 200px;
+		}
+
+		.title {
+			font-size: 18px;
+			color: #00c3f5;
+			margin: 15px auto;
+		}
 	}
 </style>
