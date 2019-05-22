@@ -6,7 +6,7 @@
         <ul class="fl">
           <li
             class="fl filter-item"
-            :class="{'active':activeFilter[item.key]==info.value}"
+            :class="{'active' : activeFilter[item.key]==info.value}"
             v-for="(info,li) in item.queryList"
             :key="li"
             @click="changeFilter(item.key,info.value)"
@@ -35,7 +35,9 @@ export default {
   methods: {
     changeFilter(key, val) {
       this.$set(this.activeFilter, key, val);
-      console.log(this.activeFilter);
+      //   this.activeFilter[key] = val;
+	  //   console.log(this.activeFilter);
+	  this.$emit('filterData',this.activeFilter)
     }
   },
   mounted() {
