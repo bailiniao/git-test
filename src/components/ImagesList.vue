@@ -1,5 +1,5 @@
 <template>
-	<div :class="{'images-wrapper':type == 'small','images-wrapper-big':type!='small'}">
+	<div :class="{'images-wrapper':type == 'small','images-wrapper-big':type=='big'}">
 		<img class="img" :src="data[activeIndex]" alt="">
 		<ul class="imgs">
 			<li class="imgs-item" :class="{'active':activeIndex==index}" v-for="(item,index) in data" :key='index' @click="changeImage(index)">

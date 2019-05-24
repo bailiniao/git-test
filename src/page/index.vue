@@ -19,17 +19,17 @@
 		<div class="index-container">
 			<div class="sale">
 				<h3 class="title">热卖产品</h3>
-				<GoodsList :data='hotSaleData'></GoodsList>
+				<IndexGoodsList :data='hotSaleData'></IndexGoodsList>
 			</div>
 			<div class="sale">
 				<h3 class="title">手机</h3>
 				<AdvertisingImg :data='phoneAdvertisingData'></AdvertisingImg>
-				<GoodsList :data='phoneSaleData'></GoodsList>
+				<IndexGoodsList :data='phoneSaleData'></IndexGoodsList>
 			</div>
 			<div class="sale">
 				<h3 class="title">智能配件</h3>
 				<AdvertisingImg :data='smartAdvertisingData'></AdvertisingImg>
-				<GoodsList :data='smartSaleData'></GoodsList>
+				<IndexGoodsList :data='smartSaleData'></IndexGoodsList>
 			</div>
 		</div>
 		<Footer></Footer>
@@ -39,7 +39,7 @@
 <script>
 	import Header from "@/components/Header.vue";
 	import Swiper from "@/components/Swiper.vue";
-	import GoodsList from "@/components/GoodsList.vue";
+	import IndexGoodsList from "@/components/IndexGoodsList.vue";
 	import AdvertisingImg from "@/components/AdvertisingImg.vue";
 	import Footer from "@/components/Footer.vue";
 	
@@ -59,7 +59,7 @@
 		components: {
 			Header,
 			Swiper,
-			GoodsList,
+			IndexGoodsList,
 			AdvertisingImg,
 			Footer
 		},
